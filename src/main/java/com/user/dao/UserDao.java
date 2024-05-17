@@ -28,7 +28,10 @@ public class UserDao {
 	public User fetchUserByEmailAndPassword(String email, String password)
 	{
 		
-		Query query = em.createQuery("select s from User s where s.email = ? and s.password = ?");
+		Query query = em.createQuery("select s from User s where s.email = ?1 and s.password = ?2");
+		
+		query.setParameter(1, email);
+		query.setParameter(2, password);
 		
 		List<User> user = query.getResultList();
 		
