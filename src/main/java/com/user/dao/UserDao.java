@@ -81,9 +81,12 @@ public class UserDao {
 		et.commit();
 	}
 	
-//	public void deleteUserById(int id)
-//	{
-//		
-//		
-//	}
+	public void deleteUserById(int id)
+	{
+		User user = em.find(User.class, id);
+		
+		et.begin();
+		em.remove(user);
+		et.commit();
+	}
 }

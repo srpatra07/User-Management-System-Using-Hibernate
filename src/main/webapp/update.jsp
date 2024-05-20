@@ -55,6 +55,7 @@
 									name="email" type="email" class="form-control" value="<%= user.getEmail() %>"required>
 							</div>
 							<input type="hidden" name="id" value="<%= user.getId() %>">
+							<input type="hidden" name="password" value="<%= user.getPassword() %>">
 							<button type="submit" class="btn bg-primary text-white col-md-12">Update</button>
 						</form>
 					</div>

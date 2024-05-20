@@ -27,7 +27,7 @@ public class RegisterServlet extends HttpServlet{
 		u.setAge(age);
 		u.setEmail(email);
 		u.setPassword(password);
-		u.setPassword(password);
+		u.setMobile(mobile);
 		
 		UserDao dao = new UserDao();
 		dao.saveUser(u);

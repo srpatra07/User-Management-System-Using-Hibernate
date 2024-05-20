@@ -1,5 +1,6 @@
 package com.user.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,6 +22,7 @@ public class User {
 	
 	private int age;
 	
+	@Column(unique = true)
 	private String email;
 	
 	private String password;

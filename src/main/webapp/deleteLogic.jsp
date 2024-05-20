@@ -11,6 +11,7 @@
 	<% 
 		int id = Integer.parseInt(request.getParameter("id"));
 		UserDao udao = new UserDao();
+		udao.deleteUserById(id);
 		response.sendRedirect("home.jsp");
 	%>
 </body>

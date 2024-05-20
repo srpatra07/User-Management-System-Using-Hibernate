@@ -32,25 +32,34 @@
 						
 					%>
 					<% 
-						String msg = (String)session.getAttribute("failure");
+						String msg = (String)session.getAttribute("passwordFailure");
 						if(msg!=null)
 						{ %>
 							<h5 style="color: red;"><%= msg %></h5>
 					<%	}
+						session.removeAttribute("passwordFailure");
+					%>
+					<% 
+						String msg1 = (String)session.getAttribute("passwordSuccess");
+						if(msg1!=null)
+						{ %>
+							<h5 style="color: green;"><%= msg1 %></h5>
+					<%	}
+						session.removeAttribute("passwordSuccess");
 					%>
 						<p class="fs-4 text-center"><b>Change Password</b></p>
 						<form action="changePassword" method="post">
 							<div class="mb-3">
 								<label class="form-label">Enter Old Password</label> <input name="oldPassword"
-									type="password" class="form-control" required>
+									type="password" name="oldPassword" class="form-control" required>
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Enter New Password</label> <input name="newPassword"
-									type="password" class="form-control" required>
+									type="password" name="newPassword" class="form-control" required>
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Confirm New Password</label> <input name="confirmPassword"
-									type="password" class="form-control" required>
+									type="password" name="confirmNewPassword" class="form-control" required>
 							</div>
 							<input type="hidden" name="id" value="<%= id %>">
 							<button type="submit" class="btn bg-primary text-white col-md-12">Update</button>

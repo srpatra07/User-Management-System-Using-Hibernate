@@ -32,6 +32,18 @@
 			<div class="col-md-12">
 				<div class="card paint-card">
 					<div class="card-body">
+					
+					<% 
+						String updatesuccess = (String)session.getAttribute("updatesuccess");
+						
+						if(updatesuccess != null)
+						{%>
+							<p class="text-center text-success fs-4"><%=updatesuccess%></p>
+							
+					<% 	}
+						session.removeAttribute("updatesuccess");
+					%>
+					
 						<p class="fs-3 text-center"><b>User Details</b></p>
 						<a href="add.jsp" class="text-decoration-none btn btn-primary">Add
 							User</a>

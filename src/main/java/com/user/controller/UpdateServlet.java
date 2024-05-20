@@ -12,24 +12,29 @@ import javax.servlet.http.HttpSession;
 import com.user.dao.UserDao;
 import com.user.dto.User;
 
-@WebServlet("/adduser")
-public class AddUserServlet extends HttpServlet{
-
+@WebServlet("/update")
+public class UpdateServlet extends HttpServlet{
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		int id = Integer.parseInt(req.getParameter("id"));
+		
 		User user = new User();
 		user.setName(req.getParameter("name"));
 		user.setAge(Integer.parseInt(req.getParameter("age")));
 		user.setEmail(req.getParameter("email"));
 		user.setPassword(req.getParameter("password"));
 		user.setMobile(Long.parseLong(req.getParameter("mobile")));
+		user.setId(id);
 		
 		UserDao dao = new UserDao();
-		dao.saveUser(user);
+		dao.updateUserById(user);
 		
 		HttpSession session = req.getSession();
-		session.setAttribute("success", "User added successfully");
-		resp.sendRedirect("add.jsp");
+		session.setAttribute("updatesuccess", "User Updated Successfully...");
+		resp.sendRedirect("home.jsp");
+		
 	}
-	
+
 }
