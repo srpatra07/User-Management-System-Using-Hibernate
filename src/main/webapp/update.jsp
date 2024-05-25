@@ -12,6 +12,9 @@
 .paint-card {
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
+body{
+	background-image: url("assets/userbg.jpg");
+}
 </style>
 </head>
 <body>
@@ -36,7 +39,7 @@
 			<div class="col-md-4 offset-md-4">
 				<div class="card paint-card">
 					<div class="card-body">
-						<p class="fs-4 text-center"><b>Update <%= user.getName() %> Profile</b></p>
+						<p class="fs-4 text-center"><b>Profile</b></p>
 						<form action="update" method="post">
 							<div class="mb-3">
 								<label class="form-label">Name</label> <input name="name"
@@ -56,7 +59,7 @@
 							</div>
 							<input type="hidden" name="id" value="<%= user.getId() %>">
 							<input type="hidden" name="password" value="<%= user.getPassword() %>">
-							<button type="submit" class="btn bg-primary text-white col-md-12">Update</button>
+							<button type="submit" class="btn bg-dark text-white col-md-12">Update</button>
 						</form>
 					</div>
 				</div>

@@ -10,6 +10,9 @@
 .paint-card {
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
+body{
+	background-image: url("assets/userbg.jpg")
+}
 </style>
 
 </head>
@@ -54,7 +57,7 @@
 								<label class="form-label">Password</label> <input
 									name="password" type="password" class="form-control" required>
 							</div>
-							<button type="submit" class="btn bg-primary text-white col-md-12">Register</button>
+							<button type="submit" class="btn bg-primary text-white bg-dark col-md-12">Register</button>
 						</form>
 
 					</div>

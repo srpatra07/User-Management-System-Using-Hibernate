@@ -11,6 +11,9 @@
 .paint-card {
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
+body{
+	background-image: url("assets/userbg.jpg");
+}
 </style>
 </head>
 <body>
@@ -27,10 +30,10 @@
 			<div class="col-md-4 offset-md-4">
 				<div class="card paint-card">
 					<div class="card-body">
-					<% 
+					<%-- <% 
 						int id = Integer.parseInt(request.getParameter("id"));
 						
-					%>
+					%> --%>
 					<% 
 						String msg = (String)session.getAttribute("passwordFailure");
 						if(msg!=null)
@@ -61,8 +64,8 @@
 								<label class="form-label">Confirm New Password</label> <input name="confirmPassword"
 									type="password" name="confirmNewPassword" class="form-control" required>
 							</div>
-							<input type="hidden" name="id" value="<%= id %>">
-							<button type="submit" class="btn bg-primary text-white col-md-12">Update</button>
+							<input type="hidden" name="id" value="<%=validateUserSession.getId() %>">
+							<button type="submit" class="btn bg-dark text-white col-md-12">Update</button>
 						</form>
 					</div>
 				</div>

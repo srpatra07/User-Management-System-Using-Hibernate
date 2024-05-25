@@ -18,23 +18,21 @@ public class ChangePasswordServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		int id = Integer.parseInt(req.getParameter("id"));
-		
 		HttpSession session = req.getSession();
 		
-		User user = (User)session.getAttribute("userObj");
+		int id = Integer.parseInt(req.getParameter("id"));
+		
+		UserDao dao = new UserDao();
+		
+		User user = dao.fetchUserById(id);
 		
 		String oldPassword = req.getParameter("oldPassword");
 		
 		String newPassword = req.getParameter("newPassword");
 		
 		String confirmNewPassword = req.getParameter("confirmNewPassword");
-		
-		UserDao dao = new UserDao();
-		
-		User reqUser = dao.fetchUserByEmailAndPassword(user.getEmail(), oldPassword);
-		
-		if(reqUser != null)
+				
+		if(user.getPassword().equals(oldPassword))
 		{
 			if(newPassword.equals(confirmNewPassword))
 			{

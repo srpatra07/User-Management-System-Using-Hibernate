@@ -1,5 +1,5 @@
 <%@page import="com.user.dto.User"%>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
 		<div class="container-fluid">
 		<div style="border-radius: 5px;">
            <a class="navbar-brand" href="#">
@@ -21,7 +21,7 @@
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="update.jsp?id=<%= use.getId() %>">Profile</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="changePassword.jsp?id=<%= use.getId() %>">Change Password</a></li>
+						aria-current="page" href="changePassword.jsp">Change Password</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="isLogout.jsp">Logout</a></li>
 				</ul>

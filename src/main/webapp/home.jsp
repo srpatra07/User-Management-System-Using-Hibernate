@@ -8,6 +8,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Home Page</title>
+<style type="text/css">
+#maincontainer{
+	background-image: url("assets/userbg.jpg");
+	margin-top: -8px;
+}
+</style>
 <%@include file="components/bootstrap_css.jsp"%>
 <body>
 
@@ -22,12 +28,12 @@
 	<%
 	User sessionUser = (User) session.getAttribute("userObj");
 	%>
-	<h1 class="text-center">
+	<h1 class="text-center text-danger bg-gray-400" style="padding-top: 10px; padding-bottom: 10px;">
 		Welcome
-		<%=sessionUser.getName().toUpperCase()%>
+		<b><%=sessionUser.getName().toUpperCase()%></b>
 		to Home Page
 	</h1>
-	<div class="container-fluid p-3">
+	<div id="maincontainer" class="container-fluid p-3">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card paint-card">
@@ -44,8 +50,7 @@
 						session.removeAttribute("updatesuccess");
 					%>
 					
-						<p class="fs-3 text-center"><b>User Details</b></p>
-						<a href="add.jsp" class="text-decoration-none btn btn-primary">Add
+						<a href="add.jsp" class="text-decoration-none btn btn-primary bg-dark">Add
 							User</a>
 						<table class="table">
 							<thead>
@@ -81,7 +86,6 @@
 									<a href="delete.jsp?id=<%= u.getId() %>" class="btn btn-danger text-decoration-none">Delete</a>
 									</td>
 								</tr>
-
 								<%
 								}
 								%>

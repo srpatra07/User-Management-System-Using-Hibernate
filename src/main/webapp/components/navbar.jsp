@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
 		<div class="container-fluid">
 		<div style="border-radius: 5px;">
            <a class="navbar-brand" href="#">

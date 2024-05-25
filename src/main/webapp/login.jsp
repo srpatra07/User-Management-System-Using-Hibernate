@@ -11,12 +11,15 @@
 .paint-card {
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
+body{
+	background-image: url("assets/userbg.jpg")
+}
 </style>
 </head>
 <body>
 	<%@ include file="components/navbar.jsp"%>
 
-	<div class="container p-5">
+	<div id="maincontainer" class="container p-5">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">
 				<div class="card paint-card">
@@ -48,7 +51,7 @@
 								<label class="form-label">Password</label> <input
 									name="password" type="password" class="form-control" required>
 							</div>
-							<button type="submit" class="btn bg-primary text-white col-md-12">Login</button>
+							<button type="submit" class="btn bg-success text-white bg-dark col-md-12">Login</button>
 						</form>
 					</div>
 				</div>

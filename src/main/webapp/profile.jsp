@@ -5,11 +5,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>User Profile Page</title>
+<style type="text/css">
+.paint-card {
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+body{
+	background-image: url("assets/userbg.jpg")
+}
+</style>
 <%@ include file="components/bootstrap_css.jsp" %>
-
-</head>
-	
+</head>	
+<body>
 <% 
 	User user= (User)session.getAttribute("userObj");
 	if(user==null)
@@ -18,8 +25,6 @@
 	}
 	else
 	{%>
-		
-		<body>
 		
 		<%@ include file="components/navbar.jsp"%>
 	<div class="container p-5">
@@ -58,7 +63,7 @@
 							</div>
 							<input type="hidden" name="id" value="<%= user.getId() %>">
 							<input type="hidden" name="password" value="<%= user.getPassword() %>">
-							<button type="submit" class="btn bg-primary text-white col-md-12">Update</button>
+							<button type="submit" class="btn bg-dark text-white bg-dark col-md-12">Update</button>
 						</form>
 
 					</div>
@@ -67,7 +72,7 @@
 		</div>
 	</div>
 		
-		</body>
+</body>
 		
 	<%}
 %>

@@ -72,12 +72,12 @@ public class UserDao {
 	public void updateUserPasswordById(int id, String password)
 	{
 		
-		User oldUser = em.find(User.class, id);
+		User user = em.find(User.class, id);
 		
-		oldUser.setPassword(password);
+		user.setPassword(password);
 		
 		et.begin();
-		em.merge(oldUser);
+		em.merge(user);
 		et.commit();
 	}
 	

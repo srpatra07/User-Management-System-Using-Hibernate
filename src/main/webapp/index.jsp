@@ -7,32 +7,45 @@
 <title>Mo Management</title>
 <%@ include file="components/bootstrap_css.jsp"%>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<style type="text/css">
+p::first-line{
+	font-size : 50px;
+	font-family: arial;
+	font-weight: bold;
+}
+body{
+	background-image: url("assets/userbg.jpg");
+}
+p{
+	color: white;
+	
+}
+.container{
+	display: flex;
+}
+.main{
+	font-size: 40px;
+	padding: 20px;
+	margin-top: 60px;
+	margin-right: 30px;
+}
+</style>
 </head>
 <body>
 
 	<%@ include file="components/navbar.jsp"%>
 
-	<div class="container col-xxl-8 px-4 py-5">
-		<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-			<div class="col-10 col-sm-8 col-lg-6">
-				<img src="assets/site_img.jpg" class="d-block mx-lg-auto img-fluid"
-					alt="Site Image" width="500" height="500" loading="lazy">
-			</div>
-			<div class="col-lg-6" style='margin-top: 15px'>
-				<h1 class="display-5 fw-bold lh-1 mb-3">Mo Management</h1>
-				<p class="lead">Java Full Stack Development refers to the development of both front-end (client-side) 
-				and back-end (server-side) parts of a web application. This involves 
-				using Java programming language for server-side development, along with
-				 front-end technologies like HTML, CSS, JavaScript, and frameworks
-				  like Angular.</p>
-				<div class="d-grid gap-2 d-md-flex justify-content-md-start">
-					<button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-					<button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+			<div class="container" style='margin-top: 15px'>
+				<div class="main">
+					<p class="lead">This website mainly focuses on How to manage 
+				User in various fields and businesses. By using this site
+				Anyone <br> can manage the User and It's more User friendly <br> also
+				This site consists of several features which are implemented
+				by JAVA Technologies.</p>
+				</div>
+				<div class="site-img">
+					<img alt="Site Image" src="assets/site_img.jpg" width="600" height="400">
 				</div>
 			</div>
-		</div>
-	</div>
-
-
 </body>
 </html>
